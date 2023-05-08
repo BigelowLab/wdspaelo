@@ -1,0 +1,49 @@
+---
+title: "WDS-paleo"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+AN R package for reading and managing NOAA's [wds-paleo text format](https://www.ncei.noaa.gov/products/paleoclimatology/contributing-data)
+
+There doesn't seem to be a lot of documentation around this format, but it appears to be self-documenting enough to be easy to parse.
+
+### Requirements
+
+  + [R v4.1+](https://www.r-project.org/)
+  
+  
+  + [R6](https://CRAN.R-project.org/package=R6)
+  + [dplyr](https://CRAN.R-project.org/package=dplyr)
+  + [readr](https://CRAN.R-project.org/package=readr)
+  + [ggplot2](https://CRAN.R-project.org/package=ggplot2)
+  
+### Installation
+
+```
+remotes::install_github("BigelowLab/wdspaleo")
+```
+
+### Usage
+
+#### Initialize a connection
+
+```{r}
+library(wdspaleo)
+library(ggplot2)
+filename = example_filename("seguin_whitney2022")
+print(filename)
+X = WDS_paleo(filename)
+X$data
+```
+
+
+```{r}
+ggplot(data = X$data, aes(x = year, y = d18O_avg)) + 
+  geom_point() +
+  geom_smooth(se = TRUE)
+```
+  

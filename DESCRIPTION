@@ -1,0 +1,15 @@
+Package: wdspaleo
+Type: Package
+Title: WDS-paleo data files
+Version: 0.1.0
+Author: Ben Tupper
+Maintainer: Ben Tupper <btupper@bigelow.org>
+URL: https://github.com/BigelowLab/wdspaleo
+Description: Access and manage WDS-paleo data files.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+  R6,
+  readr
+RoxygenNote: 7.2.3
