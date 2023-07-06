@@ -40,6 +40,7 @@ X = WDS_paleo(filename)
 X$data
 ```
 
+### The contents of any given data source vary... so you'll have to explore.
 
 ```{r}
 ggplot(data = X$data, aes(x = year, y = d18O_avg)) + 

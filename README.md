@@ -56,6 +56,8 @@ X$data
     ## 10  1693       NA      NA              NA            NA       NA      NA
     ## # ℹ 320 more rows
 
+### The contents of any given data source vary… so you’ll have to explore.
+
 ``` r
 ggplot(data = X$data, aes(x = year, y = d18O_avg)) + 
   geom_point() +
